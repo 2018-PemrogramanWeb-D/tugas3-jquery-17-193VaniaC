@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas 3 Pweb</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tombol1").click(function(){
+                $("div").animate({
+                    height: 'toggle'
+                    });
+               });
+            $("#tombol2").click(function(){
+                $("#textnya").text(function(i, origText){
+                    return origText + " Miaw! ";
+                    });
+                });
+            $("#input").on("keyup", function(){
+                var value = $(this).val().toLowerCase();
+                $("#datanya tr").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value)> -1)
+        });
+        });
+        });
+    </script>
+    <style>
+        body {background-color:#38a2ad; text-align:center;}
+        h1 {font-family:fantasy; color:white;}
+        img {text-align:center; height: 250px; width: 400px;}
+        tombol {text-align:center;}
+        table.center {margin-left:auto; margin-right:auto;}
+        p {font-family:fantasy;}
+    </style>
+    </head>
+    <body>
+        <h1>Munculkan dan hilangkan seekor kucing dengan menekan tombol berikut!</h1>
+        <p></p>
+        <button id="tombol1">Klik!</button>
+        <div><img src="https://news.nationalgeographic.com/content/dam/news/photos/000/755/75552.adapt.1190.1.jpg" alt="nya">
+        </div>
+        <p id="textnya"><b>Bagaimana suara kucing?</b></p>
+        <p></p>
+        <button id="tombol2">Miaw?</button>
+        <p>berikut merupakan jenis kucing, cari tahu dari mana favoritmu!</p>
+        <input id="input" type="text" placeholder="Cari">
+
+            <table class="center">
+                <thead>
+                <tr>
+                    <th>Jenis Kucing</th>
+                    <th>Asal</th>
+                </tr>
+                </thead>
+                <tbody id="datanya">
+                <tr>
+                    <td>Somali Cat</td>
+                    <td>Australia</td>
+                </tr>
+                <tr>
+                    <td>Brazilian Shorthair</td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Sphynx cat</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Sumxu</td>
+                    <td>China</td>
+                </tr>
+                <tr>
+                    <td>Egyptian Mau</td>
+                    <td>Egypt</td>
+                </tr>
+                <tr>
+                    <td>Chartreux</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Raas cat</td>
+                    <td>Indonesia</td>
+                </tr>
+                <tr>
+                    <td>Kurilian Bobtail</td>
+                    <td>Japan</td>
+                </tr>
+                </tbody>
+                </table>
+    </body>
+    </html>
+
